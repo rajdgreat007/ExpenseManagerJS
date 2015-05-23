@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>expense manager</title>
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+<body>
+<h1>Expense manager</h1>
+<div id="container">
+    <div id="message"></div>
+    <div id="addFriend">
+        <h2>Add Friend</h2>
+        <div class="inputWrap">
+            <label for="newFriend">Friend Name</label>
+            <input type="text" name="newFriend" id="newFriend"/>
+        </div>
+        <div class="inputWrap">
+            <button id="addFriendButton" class="button">Save Friend</button>
+        </div>
+    </div>
+    <hr/>
+    <div id="addExpense">
+        <h2>Add Expense</h2>
+        <div class="inputWrap">
+            <label for="expenseDescription">Expense Description</label>
+            <input type="text" name="expenseDescription" id="expenseDescription"/>
+        </div>
+        <div  class="inputWrap">
+            <label for="expenseAmount">Expense Amount</label>
+            <input type="text" name="expenseAmount" id="expenseAmount"/>
+        </div>
+        <div class="inputWrap">
+            <label for="chooseFriends">Choose friend(s):</label>
+            <select name="friend" multiple="multiple" id="chooseFriends" class="friendSelect"></select>
+        </div>
+        <div class="inputWrap">
+            <button id="addExpenseButton" class="button">Save Expense</button>
+        </div>
+
+    </div>
+</div>
+<table id="showExpenses">
+    <thead>
+    <tr>
+        <th>Expense Description</th>
+        <th>Amount</th>
+        <th>Friends</th>
+        <th>edit</th>
+        <th>delete</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script src="js/index.js"></script>
+</body>
+</html>

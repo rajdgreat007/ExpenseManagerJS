@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #F5F7FA;
+  margin-bottom: 20px;
+}
+
+h1{
+    color: #F5F7FA;
+    text-align: center;
+    padding: 10px;
+    background: black;
+}
+body {
+  background: yellowgreen;
+}
+
+#container{
+    margin: 0 auto;
+    width:960px;
+    background: green;
+}
+table {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+table th {
+  padding: 10px;
+}
+table tr:nth-child(odd) {
+  background-color: #F5F7FA;
+}
+table td {
+  padding: 10px 15px;
+  color: #434A54;
+  font-size: 14px;
+}
+table td:last-child, table td:nth-last-child(2) {
+  text-align: center;
+  cursor: pointer;
+}
+
+.amount {
+  color: #e74c3c;
+  text-align: right;
+}
+
+.button,.editBtn,.delBtn {
+    position: relative;
+    color: #F5F7FA;
+    padding: 10px;
+    text-align: center;
+    line-height: 12px;
+    background-color: #19b5fe;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-small{
+    height: 25px;
+    padding: 3px;
+    margin: 0;
+}
+#addFriend {
+    color: #fff;
+    padding: 20px;
+}
+
+#addExpense {
+  color: #fff;
+  padding: 20px;
+}
+#addExpense select, #addExpense input,#addFriend input {
+  margin-bottom: 11px;
+  color: #434A54;
+  padding: 10px;
+  width: 250px;
+  border-radius: 3px;
+  border: 0;
+  vertical-align: top;
+  float: right;
+}
+
+div.inputWrap{
+    width: 490px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+#addExpense label ,#addFriend label{
+  font-size: 20px;
+}
+
+#addExpense .error-msg {
+  position: absolute;
+  color: #e74c3c;
+  bottom: 10px;
+  left: 0;
+  font-size: 12px;
+}
+
+
+#amount {
+  width: 60px;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+
+#addExpense select#chooseFriends{
+    width: 270px;
+}
+
+#message{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    background: blue;
+}
+#addFriendButton,#addExpenseButton{
+    float: right;
+}
