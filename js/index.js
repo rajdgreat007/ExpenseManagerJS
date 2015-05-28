@@ -4,7 +4,7 @@ var expenseManager = (function(){
         friendsKey : 'friend',
         otherBrowserExpenseStore : [],
         otherBrowserFriendStore : [],
-        localStorageSupport : typeof(Storage) !== "undefined",
+        localStorageSupport : typeof(Storage) == "function",
         cache :{
             chooseFriends : document.getElementById('chooseFriends'),
             addFriendButton : document.getElementById('addFriendButton'),
@@ -184,7 +184,7 @@ var expenseManager = (function(){
                 privateFunctions.clearAllValuesMultiSelect();
                 for ( var x = 0, l = privateVars.cache.chooseFriends.options.length, o; x < l; x++ ) {
                     o = privateVars.cache.chooseFriends.options[x];
-                    if ( expense.chooseFriends.indexOf( o.text ) != -1 ){
+                    if ( privateFunctions.getArrayIndex(expense.chooseFriends, o.text) != -1 ){
                         o.selected = true;
                     }
                 }
@@ -207,6 +207,14 @@ var expenseManager = (function(){
                 }
                 this.deleteTableRow(id);
             }
+        },
+        getArrayIndex : function(arr,item){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]==item){
+                    return i;
+                }
+            }
+            return -1;
         }
 
     };
@@ -217,11 +225,11 @@ var expenseManager = (function(){
             privateFunctions.populateDataFromLocalStorage();
         },
         addFriend : function(friend){
-            if(friend==''||friend.trim()=='') {
+            if(friend=='') {
                 privateVars.cache.message.innerHTML='Friend name cannot be empty';
             }else{
                 var fs = privateFunctions.getFriendsStorage();
-                if(fs.indexOf(friend)==-1) {
+                if(privateFunctions.getArrayIndex(fs,friend)==-1) {
                     privateFunctions.saveFriend(fs,friend);
                     privateVars.cache.newFriend.value='';
                     privateVars.cache.message.innerHTML='Friend added Successfully!';
